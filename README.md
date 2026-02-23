@@ -13,7 +13,7 @@
       box-sizing: border-box;
     }
 
-    body {
+   body {
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
       background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
       min-height: 100vh;
@@ -21,7 +21,7 @@
       color: #333;
     }
 
-    /* ===== CONTAINER ===== */
+  /* ===== CONTAINER ===== */
     .quiz-container {
       width: 90%;
       max-width: 600px;
@@ -35,7 +35,6 @@
       transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
       overflow-x: hidden;
     }
-
     /* ===== AUTH SCREENS ===== */
     .auth-screen {
       padding: 60px 40px;
@@ -46,11 +45,9 @@
       justify-content: center;
       flex-direction: column;
     }
-
     .auth-screen.active {
       display: flex;
     }
-
     .auth-title {
       font-size: clamp(2.2rem, 5vw, 3.5rem);
       background: linear-gradient(135deg, #667eea, #764ba2);
@@ -60,17 +57,14 @@
       margin-bottom: 24px;
       font-weight: 700;
     }
-
     .auth-form {
       width: 100%;
       max-width: 400px;
     }
-
     .form-group {
       margin-bottom: 20px;
       position: relative;
     }
-
     .form-group input {
       width: 100%;
       padding: 16px 20px;
@@ -80,13 +74,11 @@
       transition: all 0.3s ease;
       background: white;
     }
-
     .form-group input:focus {
       outline: none;
       border-color: #667eea;
       box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
     }
-
     .auth-btn {
       width: 100%;
       background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
@@ -101,22 +93,18 @@
       box-shadow: 0 10px 30px rgba(255, 107, 107, 0.4);
       margin-bottom: 16px;
     }
-
     .auth-btn:hover {
       transform: translateY(-2px);
       box-shadow: 0 20px 40px rgba(255, 107, 107, 0.6);
     }
-
     .toggle-link {
       color: #667eea;
       text-decoration: none;
       font-weight: 500;
     }
-
     .toggle-link:hover {
       text-decoration: underline;
     }
-
     /* ===== DASHBOARD ===== */
     .dashboard {
       padding: 60px 40px;
@@ -124,11 +112,9 @@
       display: none;
       min-height: 85vh;
     }
-
     .dashboard.active {
       display: block;
     }
-
     .user-info {
       background: linear-gradient(135deg, #667eea, #764ba2);
       color: white;
@@ -136,7 +122,6 @@
       border-radius: 16px;
       margin-bottom: 32px;
     }
-
     .score-history {
       background: white;
       border-radius: 16px;
@@ -146,7 +131,6 @@
       max-height: 220px;
       overflow-y: auto;
     }
-
     .score-item {
       display: flex;
       justify-content: space-between;
@@ -154,11 +138,9 @@
       border-bottom: 1px solid #eee;
       font-weight: 600;
     }
-
     .score-item:last-child {
       border-bottom: none;
     }
-
     .start-quiz-btn {
       background: linear-gradient(135deg, #4ecdc4, #44a08d);
       color: white;
@@ -171,12 +153,10 @@
       transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
       box-shadow: 0 10px 30px rgba(78, 205, 196, 0.4);
     }
-
     .start-quiz-btn:hover {
       transform: translateY(-4px);
       box-shadow: 0 20px 40px rgba(78, 205, 196, 0.6);
     }
-
     /* Logout button */
     #logoutBtn {
       background: #ff6b6b !important;
@@ -187,11 +167,9 @@
       box-shadow: none !important;
       transition: background-color 0.3s ease;
     }
-
     #logoutBtn:hover {
       background: #ff4b4b !important;
     }
-
     /* ===== QUIZ SCREENS ===== */
     .start-screen,
     .quiz-screen,
