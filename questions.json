@@ -1,0 +1,246 @@
+{
+  "categories": [
+    {
+      "id": "programming",
+      "name": "Programming",
+      "icon": "💻",
+      "color": "#6366f1"
+    },
+    {
+      "id": "science",
+      "name": "Science",
+      "icon": "🔬",
+      "color": "#10b981"
+    },
+    {
+      "id": "mathematics",
+      "name": "Mathematics",
+      "icon": "📐",
+      "color": "#f59e0b"
+    },
+    {
+      "id": "history",
+      "name": "History",
+      "icon": "🏛️",
+      "color": "#ef4444"
+    },
+    {
+      "id": "geography",
+      "name": "Geography",
+      "icon": "🌍",
+      "color": "#3b82f6"
+    },
+    {
+      "id": "technology",
+      "name": "Technology",
+      "icon": "🚀",
+      "color": "#8b5cf6"
+    }
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "category": "programming",
+      "type": "mcq",
+      "difficulty": "easy",
+      "question": "What does HTML stand for?",
+      "options": [
+        "Hyper Text Markup Language",
+        "High Tech Modern Language",
+        "Home Tool Markup Language",
+        "Hyperlinks and Text Markup Language"
+      ],
+      "correctAnswer": 0,
+      "explanation": "HTML stands for Hyper Text Markup Language, which is the standard markup language for creating web pages."
+    },
+    {
+      "id": 2,
+      "category": "programming",
+      "type": "mcq",
+      "difficulty": "easy",
+      "question": "Which of these is NOT a JavaScript framework?",
+      "options": ["React", "Angular", "Django", "Vue"],
+      "correctAnswer": 2,
+      "explanation": "Django is a Python web framework, not a JavaScript framework."
+    },
+    {
+      "id": 3,
+      "category": "programming",
+      "type": "mcq",
+      "difficulty": "medium",
+      "question": "What is the time complexity of binary search?",
+      "options": ["O(n)", "O(n²)", "O(log n)", "O(1)"],
+      "correctAnswer": 2,
+      "explanation": "Binary search has O(log n) time complexity as it divides the search space in half with each iteration."
+    },
+    {
+      "id": 4,
+      "category": "programming",
+      "type": "code",
+      "difficulty": "medium",
+      "question": "What will be the output of this JavaScript code?\n\nlet x = [1, 2, 3];\nlet y = x;\ny.push(4);\nconsole.log(x.length);",
+      "options": ["3", "4", "Error", "undefined"],
+      "correctAnswer": 1,
+      "explanation": "Arrays are passed by reference in JavaScript. Since y is assigned to x, both point to the same array. Adding 4 to y also affects x."
+    },
+    {
+      "id": 5,
+      "category": "programming",
+      "type": "mcq",
+      "difficulty": "hard",
+      "question": "In Python, what is the output of:\n\nprint(type(lambda: None))",
+      "options": ["<class 'function'>", "<class 'lambda'>", "<class 'NoneType'>", "SyntaxError"],
+      "correctAnswer": 0,
+      "explanation": "In Python, lambda creates a function object. The type of a lambda function is <class 'function'>."
+    },
+    {
+      "id": 6,
+      "category": "science",
+      "type": "mcq",
+      "difficulty": "easy",
+      "question": "What is the chemical symbol for gold?",
+      "options": ["Go", "Gd", "Au", "Ag"],
+      "correctAnswer": 2,
+      "explanation": "Au comes from the Latin word 'aurum' meaning gold."
+    },
+    {
+      "id": 7,
+      "category": "science",
+      "type": "mcq",
+      "difficulty": "medium",
+      "question": "Which planet has the most moons?",
+      "options": ["Jupiter", "Saturn", "Uranus", "Neptune"],
+      "correctAnswer": 1,
+      "explanation": "Saturn has over 140 known moons, making it the planet with the most moons in our solar system."
+    },
+    {
+      "id": 8,
+      "category": "science",
+      "type": "mcq",
+      "difficulty": "hard",
+      "question": "What is the half-life of Carbon-14?",
+      "options": ["5,730 years", "1,000 years", "10,000 years", "50,000 years"],
+      "correctAnswer": 0,
+      "explanation": "Carbon-14 has a half-life of approximately 5,730 years, which is used in radiocarbon dating."
+    },
+    {
+      "id": 9,
+      "category": "mathematics",
+      "type": "mcq",
+      "difficulty": "easy",
+      "question": "What is the value of π (pi) to 2 decimal places?",
+      "options": ["3.12", "3.14", "3.16", "3.18"],
+      "correctAnswer": 1,
+      "explanation": "Pi (π) is approximately 3.14159..., so to 2 decimal places it is 3.14."
+    },
+    {
+      "id": 10,
+      "category": "mathematics",
+      "type": "mcq",
+      "difficulty": "medium",
+      "question": "What is the derivative of x²?",
+      "options": ["x", "2x", "2", "x²"],
+      "correctAnswer": 1,
+      "explanation": "Using the power rule, d/dx(x²) = 2x."
+    },
+    {
+      "id": 11,
+      "category": "mathematics",
+      "type": "mcq",
+      "difficulty": "hard",
+      "question": "What is the integral of 2x dx?",
+      "options": ["x² + C", "2x² + C", "x²", "2 + C"],
+      "correctAnswer": 0,
+      "explanation": "The integral of 2x dx = 2∫x dx = 2(x²/2) + C = x² + C."
+    },
+    {
+      "id": 12,
+      "category": "history",
+      "type": "mcq",
+      "difficulty": "easy",
+      "question": "In which year did World War II end?",
+      "options": ["1943", "1944", "1945", "1946"],
+      "correctAnswer": 2,
+      "explanation": "World War II ended in 1945 with the surrender of Japan."
+    },
+    {
+      "id": 13,
+      "category": "history",
+      "type": "mcq",
+      "difficulty": "medium",
+      "question": "Who was the first President of the United States?",
+      "options": ["Thomas Jefferson", "John Adams", "George Washington", "Benjamin Franklin"],
+      "correctAnswer": 2,
+      "explanation": "George Washington served as the first President from 1789 to 1797."
+    },
+    {
+      "id": 14,
+      "category": "geography",
+      "type": "mcq",
+      "difficulty": "easy",
+      "question": "What is the largest country by area?",
+      "options": ["Canada", "China", "United States", "Russia"],
+      "correctAnswer": 3,
+      "explanation": "Russia is the largest country by land area, covering over 17 million square kilometers."
+    },
+    {
+      "id": 15,
+      "category": "geography",
+      "type": "mcq",
+      "difficulty": "medium",
+      "question": "Which is the longest river in the world?",
+      "options": ["Amazon", "Nile", "Yangtze", "Mississippi"],
+      "correctAnswer": 1,
+      "explanation": "The Nile River is approximately 6,650 km long, making it the longest river in the world."
+    },
+    {
+      "id": 16,
+      "category": "technology",
+      "type": "mcq",
+      "difficulty": "easy",
+      "question": "Who founded Microsoft?",
+      "options": ["Steve Jobs", "Bill Gates", "Mark Zuckerberg", "Elon Musk"],
+      "correctAnswer": 1,
+      "explanation": "Bill Gates co-founded Microsoft in 1975 with Paul Allen."
+    },
+    {
+      "id": 17,
+      "category": "technology",
+      "type": "mcq",
+      "difficulty": "medium",
+      "question": "What does CPU stand for?",
+      "options": ["Central Processing Unit", "Computer Personal Unit", "Central Program Utility", "Core Processing Unit"],
+      "correctAnswer": 0,
+      "explanation": "CPU stands for Central Processing Unit, the main processor of a computer."
+    },
+    {
+      "id": 18,
+      "category": "programming",
+      "type": "truefalse",
+      "difficulty": "easy",
+      "question": "JavaScript is a statically typed language.",
+      "options": ["True", "False"],
+      "correctAnswer": 1,
+      "explanation": "JavaScript is a dynamically typed language, meaning variable types are determined at runtime."
+    },
+    {
+      "id": 19,
+      "category": "science",
+      "type": "truefalse",
+      "difficulty": "easy",
+      "question": "Light travels faster than sound.",
+      "options": ["True", "False"],
+      "correctAnswer": 0,
+      "explanation": "Light travels at approximately 299,792 km/s, while sound travels at about 343 m/s in air."
+    },
+    {
+      "id": 20,
+      "category": "programming",
+      "type": "fillblank",
+      "difficulty": "medium",
+      "question": "The CSS property used to make elements flexible in a flex container is _______.",
+      "correctAnswer": "flex",
+      "explanation": "The 'flex' property is used in CSS Flexbox to define how a flex item will grow or shrink."
+    }
+  ]
+}
