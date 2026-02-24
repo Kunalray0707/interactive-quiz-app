@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuizNova - The Next Generation Smart Quiz Platform</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Particles Canvas -->
+    <canvas id="particles-canvas"></canvas>
+    
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="navbar-brand" onclick="navigateTo('landing')">
+            <div class="navbar-logo">⚡</div>
+            <span>QuizNova</span>
+        </div>
+        <div class="navbar-menu">
+            <a href="#" class="nav-link" data-page="landing" onclick="navigateTo('landing')">Home</a>
+            <a href="#" class="nav-link" data-page="modes" onclick="navigateTo('modes')">Quiz</a>
+            <a href="#" class="nav-link" data-page="dashboard" onclick="navigateTo('dashboard')">Dashboard</a>
+            <a href="#" class="nav-link" data-page="leaderboard" onclick="navigateTo('leaderboard')">Leaderboard</a>
+            <button id="theme-toggle" class="theme-toggle">
+                <span class="theme-icon">🌙</span>
+            </button>
+            <button id="sound-toggle" class="theme-toggle">
+                <span class="sound-icon">🔊</span>
+            </button>
+            <button id="mobile-menu-btn" class="theme-toggle hidden">
+                <span>☰</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar-brand" onclick="navigateTo('landing')">
+            <div class="navbar-logo">⚡</div>
+            <span>QuizNova</span>
+        </div>
+        <ul class="sidebar-menu">
+            <li class="sidebar-item">
+                <a href="#" class="sidebar-link" data-page="landing" onclick="navigateTo('landing')">
+                    <span class="sidebar-link-icon">🏠</span>
+                    Home
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a href="#" class="sidebar-link" data-page="modes" onclick="navigateTo('modes')">
+                    <span class="sidebar-link-icon">🎯</span>
+                    Play Quiz
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a href="#" class="sidebar-link" data-page="dashboard" onclick="navigateTo('dashboard')">
+                    <span class="sidebar-link-icon">📊</span>
+                    Dashboard
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a href="#" class="sidebar-link" data-page="leaderboard" onclick="navigateTo('leaderboard')">
+                    <span class="sidebar-link-icon">🏆</span>
+                    Leaderboard
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a href="#" class="sidebar-link" data-page="auth" onclick="navigateTo('auth')">
+                    <span class="sidebar-link-icon">👤</span>
+                    Profile
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a href="#" class="sidebar-link" data-page="admin" onclick="navigateTo('admin')">
+                    <span class="sidebar-link-icon">⚙️</span>
+                    Admin
+                </a>
+            </li>
+        </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        
+        <!-- Landing Page -->
+        <div id="landing-page" class="page active">
+            <section class="hero">
+                <div class="hero-content">
+                    <h1 class="hero-title">
+                        <span class="gradient-text">QuizNova</span>
+                        <br>The Future of Smart Quizzing
+                    </h1>
+                    <p class="hero-subtitle">
+                        Experience the next generation quiz platform with AI-powered adaptive difficulty, 
+                        gamification, and stunning visuals. Challenge yourself and compete with others!
+                    </p>
+                    <div class="hero-buttons">
+                        <button class="btn btn-primary btn-lg" onclick="navigateTo('modes')">
+                            Start Playing
+                        </button>
+                        <button class="btn btn-neon btn-lg" onclick="navigateTo('leaderboard')">
+                            View Leaderboard
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Quiz Modes Page -->
+        <div id="modes-page" class="page">
+            <div class="container">
+                <h2 class="text-center mb-4">Choose Your <span class="gradient-text">Quiz Mode</span></h2>
+                
+                <div class="mode-grid">
+                    <div class="mode-card glass-card" data-mode="practice">
+                        <div class="mode-icon">📚</div>
+                        <h3 class="mode-title">Practice Mode</h3>
+                        <p class="mode-description">Learn at your own pace with no time pressure. Perfect for beginners.</p>
+                    </div>
+                    
+                    <div class="mode-card glass-card" data-mode="timed">
+                        <div class="mode-icon">⏱️</div>
+                        <h3 class="mode-title">Timed Mode</h3>
+                        <p class="mode-description">Answer as many questions as you can within the time limit.</p>
+                        <span class="mode-badge">POPULAR</span>
+                    </div>
+                    
+                    <div class="mode-card glass-card" data-mode="survival">
+                        <div class="mode-icon">💀</div>
+                        <h3 class="mode-title">Survival Mode</h3>
+                        <p class="mode-description">One wrong answer and you're out! How far can you go?</p>
+                    </div>
+                    
+                    <div class="mode-card glass-card" data-mode="battle">
+                        <div class="mode-icon">⚔️</div>
+                        <h3 class="mode-title">Battle Mode</h3>
+                        <p class="mode-description">Challenge a friend in local multiplayer. Who will be the champion?</p>
+                    </div>
+                    
+                    <div class="mode-card glass-card" data-mode="ai">
+                        <div class="mode-icon">🤖</div>
+                        <h3 class="mode-title">AI Smart Mode</h3>
+                        <p class="mode-description">Questions adapt to your skill level. The AI learns your weaknesses.</p>
+                        <span class="mode-badge">NEW</span>
+                    </div>
+                </div>
+                
+                <div class="card mt-4">
+                    <h3 class="mb-3">Customize Your Quiz</h3>
+                    <div class="flex gap-3 flex-wrap">
+                        <div class="form-group" style="flex: 1; min-width: 200px;">
+                            <label class="form-label">Category</label>
+                            <select id="category-select" class="form-input form-select">
+                                <option value="all">All Categories</option>
+                                <option value="programming">Programming</option>
+                                <option value="science">Science</option>
+                                <option value="mathematics">Mathematics</option>
+                                <option value="history">History</option>
+                                <option value="geography">Geography</option>
+                                <option value="technology">Technology</option>
+                            </select>
+                        </div>
+                        <div class="form-group" style="flex: 1; min-width: 200px;">
+                            <label class="form-label">Difficulty</label>
+                            <select id="difficulty-select" class="form-input form-select">
+                                <option value="all">All Levels</option>
+                                <option value="easy">Easy</option>
+                                <option value="medium">Medium</option>
+                                <option value="hard">Hard</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quiz Page -->
+        <div id="quiz-page" class="page">
+            <div class="quiz-container">
+                <div class="quiz-header">
+                    <div class="quiz-progress">
+                        <div class="flex justify-between mb-1">
+                            <span>Question <span id="question-number">1</span> of <span id="total-questions">10</span></span>
+                            <span id="question-category-display" class="badge">Programming</span>
+                        </div>
+                        <div class="quiz-progress-bar">
+                            <div class="quiz-progress-fill" style="width: 0%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="quiz-timer">
+                        <div class="timer-ring">
+                            <svg width="60" height="60">
+                                <circle class="timer-ring-bg" cx="30" cy="30" r="45"></circle>
+                                <circle class="timer-ring-progress" cx="30" cy="30" r="45" 
+                                    stroke-dasharray="282.74" stroke-dashoffset="0"></circle>
+                            </svg>
+                            <span class="timer-text">30</span>
+                        </div>
+                    </div>
+                    
+                    <div class="quiz-stats">
+                        <div class="quiz-stat">
+                            <div class="quiz-stat-value" id="stat-score">0</div>
+                            <div class="quiz-stat-label">Score</div>
+                        </div>
+                        <div class="quiz-stat">
+                            <div class="quiz-stat-value" id="stat-streak">0</div>
+                            <div class="quiz-stat-label">Streak</div>
+                        </div>
+                        <div class="quiz-stat">
+                            <div class="quiz-stat-value" id="stat-xp">+0</div>
+                            <div class="quiz-stat-label">XP</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="lifelines">
+                    <button class="lifeline-btn" id="lifeline-fifty" onclick="useFiftyFifty()">
+                        <span class="lifeline-icon">🎯</span> 50/50
+                    </button>
+                    <button class="lifeline-btn" id="lifeline-skip" onclick="useSkip()">
+                        <span class="lifeline-icon">⏭️</span> Skip
+                    </button>
+                    <button class="lifeline-btn" id="lifeline-freeze" onclick="useTimeFreeze()">
+                        <span class="lifeline-icon">❄️</span> Freeze
+                    </button>
+                    <button class="lifeline-btn" id="lifeline-hint" onclick="useHint()">
+                        <span class="lifeline-icon">💡</span> Hint
+                    </button>
+                </div>
+                
+                <div class="question-card">
+                    <span class="question-number" id="question-number">1</span>
+                    <span class="question-category" id="question-difficulty-display">Easy</span>
+                    <h3 class="question-text" id="question-text">Loading question...</h3>
+                    <div class="answers-grid">
+                        <!-- Answer options will be generated here -->
+                    </div>
+                </div>
+                
+                <div class="quiz-actions">
+                    <button class="btn btn-ghost" onclick="navigateTo('modes')">
+                        ← Back to Modes
+                    </button>
+                    <button class="btn btn-danger" onclick="endQuiz()">
+                        Quit Quiz
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Results Page -->
+        <div id="results-page" class="page">
+            <div class="results-container">
+                <h2 class="mb-4">Quiz Complete!</h2>
+                
+                <div class="results-score">
+                    <div class="score-circle">
+                        <svg width="200" height="200">
+                            <defs>
+                                <linearGradient id="scoreGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#6366f1"/>
+                                    <stop offset="100%" style="stop-color:#ec4899"/>
+                                </linearGradient>
+                            </defs>
+                            <circle class="score-circle-bg" cx="100" cy="100" r="90"></circle>
+                            <circle class="score-circle-progress" cx="100" cy="100" r="90"></circle>
+                        </svg>
+                        <span class="score-value" id="score-value">0%</span>
+                    </div>
+                    <p class="score-label">Your Score</p>
+                </div>
+                
+                <div class="results-stats">
+                    <div class="result-stat">
+                        <div class="result-stat-icon">✓</div>
+                        <div class="result-stat-value" id="result-correct">0</div>
+                        <div class="result-stat-label">Correct</div>
+                    </div>
+                    <div class="result-stat">
+                        <div class="result-stat-icon">✕</div>
+                        <div class="result-stat-value" id="result-incorrect">0</div>
+                        <div class="result-stat-label">Incorrect</div>
+                    </div>
+                    <div class="result-stat">
+                        <div class="result-stat-icon">⚡</div>
+                        <div class="result-stat-value" id="result-xp">+0</div>
+                        <div class="result-stat-label">XP Earned</div>
+                    </div>
+                    <div class="result-stat">
+                        <div class="result-stat-icon">🔥</div>
+                        <div class="result-stat-value" id="result-streak">0</div>
+                        <div class="result-stat-label">Streak</div>
+                    </div>
+                </div>
+                
+                <div class="results-actions">
+                    <button class="btn btn-primary" onclick="navigateTo('modes')">
+                        Play Again
+                    </button>
+                    <button class="btn btn-secondary" onclick="navigateTo('dashboard')">
+                        View Dashboard
+                    </button>
+                    <button class="btn btn-ghost" onclick="navigateTo('leaderboard')">
+                        Leaderboard
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dashboard Page -->
+        <div id="dashboard-page" class="page">
+            <div class="container">
+                <h2 class="mb-4">Your <span class="gradient-text">Dashboard</span></h2>
+                
+                <!-- User Info -->
+                <div class="user-info">
+                    <div class="user-avatar" id="dashboard-avatar">U</div>
+                    <div class="user-details">
+                        <div class="user-name" id="dashboard-username">User</div>
+                        <div class="user-level">
+                            Level <span class="level-badge" id="dashboard-level">1</span>
+                            <span class="user-xp" id="dashboard-xp">0 XP</span>
+                        </div>
+                        <div class="xp-bar">
+                            <div class="xp-bar-fill" style="width: 0%"></div>
+                        </div>
+                    </div>
+                    <div class="badge streak">🔥 <span id="dashboard-streak">0</span> Day Streak</div>
+                </div>
+                
+                <!-- Stats Grid -->
+                <div class="dashboard-grid">
+                    <div class="dashboard-card glass-card">
+                        <div class="dashboard-card-title">Total Quizzes</div>
+                        <div class="dashboard-card-value" id="stat-total-quizzes">0</div>
+                    </div>
+                    <div class="dashboard-card glass-card">
+                        <div class="dashboard-card-title">Questions Answered</div>
+                        <div class="dashboard-card-value" id="stat-total-questions">0</div>
+                    </div>
+                    <div class="dashboard-card glass-card">
+                        <div class="dashboard-card-title">Correct Answers</div>
+                        <div class="dashboard-card-value" id="stat-correct-answers">0</div>
+                    </div>
+                    <div class="dashboard-card glass-card">
+                        <div class="dashboard-card-title">Accuracy</div>
+                        <div class="dashboard-card-value" id="stat-accuracy">0%</div>
+                    </div>
+                    <div class="dashboard-card glass-card" style="grid-column: span 8;">
+                        <div class="dashboard-card-title">Performance Over Time</div>
+                        <div class="chart-container">
+                            <canvas id="performance-chart"></canvas>
+                        </div>
+                    </div>
+                    <div class="dashboard-card glass-card" style="grid-column: span 4;">
+                        <div class="dashboard-card-title">Accuracy Rate</div>
+                        <div class="chart-container">
+                            <canvas id="accuracy-chart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Leaderboard Page -->
+        <div id="leaderboard-page" class="page">
+            <div class="container">
+                <h2 class="text-center mb-4">🏆 <span class="gradient-text">Leaderboard</span></h2>
+                
+                <div class="card">
+                    <table class="leaderboard-table">
+                        <thead>
+                            <tr>
+                                <th>Rank</th>
+                                <th>Player</th>
+                                <th>Level</th>
+                                <th>XP</th>
+                                <th>Quizzes</th>
+                            </tr>
+                        </thead>
+                        <tbody id="leaderboard-body">
+                            <!-- Leaderboard entries will be generated here -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Auth Page -->
+        <div id="auth-page" class="page">
+            <div class="container">
+                <div class="card" style="max-width: 450px; margin: 0 auto;">
+                    <h2 class="text-center mb-4">Welcome to <span class="gradient-text">QuizNova</span></h2>
+                    
+                    <!-- Login Form -->
+                    <form id="login-form">
+                        <div class="form-group">
+                            <label class="form-label">Email</label>
+                            <input type="email" id="login-email" class="form-input" placeholder="Enter your email" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Password</label>
+                            <input type="password" id="login-password" class="form-input" placeholder="Enter your password" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-full">Login</button>
+                        <p class="text-center mt-3">
+                            Don't have an account? 
+                            <a href="#" id="switch-to-register">Register</a>
+                        </p>
+                    </form>
+                    
+                    <!-- Register Form -->
+                    <form id="register-form" class="hidden">
+                        <div class="form-group">
+                            <label class="form-label">Name</label>
+                            <input type="text" id="register-name" class="form-input" placeholder="Enter your name" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Email</label>
+                            <input type="email" id="register-email" class="form-input" placeholder="Enter your email" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Password</label>
+                            <input type="password" id="register-password" class="form-input" placeholder="Create a password" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-full">Register</button>
+                        <p class="text-center mt-3">
+                            Already have an account? 
+                            <a href="#" id="switch-to-login">Login</a>
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Admin Page -->
+        <div id="admin-page" class="page">
+            <div class="container">
+                <div class="admin-header">
+                    <h2>Admin <span class="gradient-text">Panel</span></h2>
+                    <div class="admin-filters">
+                        <select class="form-input form-select" style="width: auto;">
+                            <option>All Categories</option>
+                            <option>Programming</option>
+                            <option>Science</option>
+                            <option>Mathematics</option>
+                        </select>
+                        <button class="btn btn-primary">Add Question</button>
+                    </div>
+                </div>
+                
+                <div class="question-list" id="questions-list">
+                    <!-- Questions will be loaded here -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- JavaScript -->
+    <script src="js/app.js"></script>
+</body>
+</html>
